@@ -1213,6 +1213,11 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
+"@types/react-native-shared-group-preferences@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native-shared-group-preferences/-/react-native-shared-group-preferences-1.1.0.tgz#91b4647765c9bb3a5f820c2b53c74d388bfa19f5"
+  integrity sha512-i2onamZJMw4l4DIwnEju95HoiEYT0qUXEhF3WldL9dDwW0wBe4YLUn5KtVhj/aJvYW8JcblONMU47qKh18tksQ==
+
 "@types/react-native@^0.63.2":
   version "0.63.51"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.51.tgz#2fc45ab934801770cdbbcdc6ae5cd85c0e2a2a02"
@@ -5507,6 +5512,11 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-native-shared-group-preferences@^1.1.21:
+  version "1.1.21"
+  resolved "https://registry.yarnpkg.com/react-native-shared-group-preferences/-/react-native-shared-group-preferences-1.1.21.tgz#b1eeb5aa49df5baf0ac5e6e71ffeacd949c10cf1"
+  integrity sha512-M2zU/ti3qCNDyau0UTz0o6etul9gIuIEylEureBvsWeKaDrgyutL9AOOApMuLgW+Cq3BdPKRfgqU27y0dQ58bQ==
 
 react-native@0.63.4:
   version "0.63.4"

@@ -10,8 +10,10 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@types/react-native-shared-group-preferences": "^1.1.0",
     "react": "16.13.1",
-    "react-native": "0.63.4"
+    "react-native": "0.63.4",
+    "react-native-shared-group-preferences": "^1.1.21"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

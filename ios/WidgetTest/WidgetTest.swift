@@ -19,41 +19,34 @@ struct Provider: IntentTimelineProvider {
   }
   
   func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-    let entry = SimpleEntry(date: Date(), configuration: configuration, displayText: "DATA")
+    let entry = SimpleEntry(date: Date(), configuration: configuration, displayText: "Data goes here")
     completion(entry)
   }
   
   func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
-    var entryDate = Date()
+    let entryDate = Date()
     
-    let sharedDefaults = UserDefaults.init(suiteName: "group.YOURINFO.HERE")
-    var entries: [SimpleEntry] = []
-    if sharedDefaults != nil {
-      if let aValue = sharedDefaults!.value(forKey: "savedData") as? String {
+    let userDefaults = UserDefaults.init(suiteName: "group.com.YOURINFO.ReactNativeWidget")
+    if userDefaults != nil {
+      if let savedData = userDefaults!.value(forKey: "savedData") as? String {
         let decoder = JSONDecoder()
-        let data = aValue.data(using: .utf8)
+        let data = savedData.data(using: .utf8)
         
         if let parsedData = try? decoder.decode(WidgetData.self, from: data!) {
-          for minuteOffset in 0 ..< 5 {
-            entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: entryDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, displayText: parsedData.displayText)
-            entries.append(entry)
-          }
+          let nextRefresh = Calendar.current.date(byAdding: .minute, value: 5, to: entryDate)!
+          let entry = SimpleEntry(date: nextRefresh, configuration: configuration, displayText: parsedData.displayText)
+          let timeline = Timeline(entries: [entry], policy: .atEnd)
           
-          let timeline = Timeline(entries: entries, policy: .atEnd)
           completion(timeline)
         } else {
           print("Could not parse data")
         }
         
       } else {
-        for minuteOffset in 0 ..< 5 {
-          entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: entryDate)!
-          let entry = SimpleEntry(date: entryDate, configuration: configuration, displayText: "Hi there, offset: \(minuteOffset)")
-          entries.append(entry)
-        }
+        let nextRefresh = Calendar.current.date(byAdding: .minute, value: 5, to: entryDate)!
+        let entry = SimpleEntry(date: nextRefresh, configuration: configuration, displayText: "No data set")
+        let timeline = Timeline(entries: [entry], policy: .atEnd)
         
-        let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
       }
     }

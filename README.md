@@ -1,6 +1,7 @@
 ## iOS Widgetkit + React Native
 
-<img src="./assets/hi.png" alt="React Native screenshot with Widgetkit" width="400" />
+<img src="./assets/input.png" alt="React Native screenshot with Widgetkit" width="350" />
+<img src="./assets/hi.png" alt="React Native screenshot with Widgetkit" width="350" />
 
 <br />
 <br />

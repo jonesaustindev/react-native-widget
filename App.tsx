@@ -12,7 +12,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, TextInput } from 'react-native';
 import SharedGroupPreferences from 'react-native-shared-group-preferences';
 
-const appGroupIdentifier = 'group.YOURINFO.HERE';
+const appGroupIdentifier = 'group.com.YOURINFO.ReactNativeWidget';
 
 const App = () => {
   const [inputText, setInputText] = useState<string>();
